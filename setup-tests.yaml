@@ -24,13 +24,13 @@ functions:
   workflow: incident/snc-incident
 - id: run-change
   type: subflow
-  workflow: incident/snc-change
+  workflow: change/snc-change
 - id: run-request
   type: subflow
-  workflow: incident/snc-request
+  workflow: request/snc-request
 - id: run-cmdb
   type: subflow
-  workflow: incident/snc-cmdb    
+  workflow: cmdb/snc-cmdb    
 
 
 states:
