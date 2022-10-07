@@ -25,12 +25,12 @@ functions:
 - id: run-change
   type: subflow
   workflow: change/snc-change
-- id: run-request
-  type: subflow
-  workflow: request/snc-request
-- id: run-cmdb
-  type: subflow
-  workflow: cmdb/snc-cmdb    
+# - id: run-request
+#   type: subflow
+#   workflow: request/snc-request
+# - id: run-cmdb
+#   type: subflow
+#   workflow: cmdb/snc-cmdb    
 
 
 states:
@@ -57,7 +57,8 @@ states:
       workflow:
         title: "The workflow to test"
         type: string
-        enum: ["incident", "change", "request", "cmdb"]
+        # enum: ["incident", "change", "request", "cmdb"]
+        enum: ["incident", "change"]
         default: "incident"
       action:
         title: "Action can be list, get, update or create"
@@ -146,42 +147,44 @@ states:
   transition: print-results
 
 #
-# Run the requests workflow tests
-#
-- id: run-request
-  log: jq(.)
-  type: action
-  action:
-    function: run-request
-    input: jq(.)
-    retries:
-      max_attempts: 3
-      delay: PT30S
-      multiplier: 2.0
-      codes: [".*"]
-  catch:
-    - error: "*"
-      transition: exception-catch
-  transition: print-results
+# The below needs to be implemented - NOT COMPLETED YET
+# #
+# # Run the requests workflow tests
+# #
+# - id: run-request
+#   log: jq(.)
+#   type: action
+#   action:
+#     function: run-request
+#     input: jq(.)
+#     retries:
+#       max_attempts: 3
+#       delay: PT30S
+#       multiplier: 2.0
+#       codes: [".*"]
+#   catch:
+#     - error: "*"
+#       transition: exception-catch
+#   transition: print-results
 
-#
-# Run the cmdb workflow tests
-#
-- id: run-cmdb
-  log: jq(.)
-  type: action
-  action:
-    function: run-cmdb
-    input: jq(.)
-    retries:
-      max_attempts: 3
-      delay: PT30S
-      multiplier: 2.0
-      codes: [".*"]
-  catch:
-    - error: "*"
-      transition: exception-catch
-  transition: print-results
+# #
+# # Run the cmdb workflow tests
+# #
+# - id: run-cmdb
+#   log: jq(.)
+#   type: action
+#   action:
+#     function: run-cmdb
+#     input: jq(.)
+#     retries:
+#       max_attempts: 3
+#       delay: PT30S
+#       multiplier: 2.0
+#       codes: [".*"]
+#   catch:
+#     - error: "*"
+#       transition: exception-catch
+#   transition: print-results
 
 #
 # Print the output fpor the test workflows
