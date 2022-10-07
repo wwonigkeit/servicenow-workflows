@@ -1,5 +1,5 @@
 #
-# NOTE: The workflow uses the table_api
+# NOTE: The workflow uses the table_api to manage changes in Servicenow
 # 
 # Can be an event driven workflow or a subflow invoked workflow. The workflow requires the following input:
 #     Servicenow.com URL: Servicenow.com URL in format https://dev80617.service-now.com

@@ -1,5 +1,5 @@
 #
-# NOTE: The workflow uses the table_api to manage incidents in Servicenow
+# NOTE: The workflow uses the table_api
 # 
 # Can be an event driven workflow or a subflow invoked workflow. The workflow requires the following input:
 #     Servicenow.com URL: Servicenow.com URL in format https://dev80617.service-now.com
@@ -50,7 +50,7 @@ states:
 #
 # The list incident state is very simple. Requires the username and password and simply lists all
 # of the incidents in the table. The equivalent REST API call for Servicenow.com is:
-#   - https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET
+#   - https://developer.servicenow.com/dev.do#!/reference/api/sandiego/rest/c_TableAPI#table-GET
 #
 - id: list-incidents
   type: action
@@ -92,7 +92,7 @@ states:
 #
 # The get incident state is very simple. Requires the username and password and simply gets a specific
 # incident in the table based on a sys_id for the incident. The equivalent REST API call for Servicenow.com is:
-#   - https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-GET-id
+#   - https://developer.servicenow.com/dev.do#!/reference/api/sandiego/rest/c_TableAPI#table-GET-id
 #
 - id: get-incident
   type: action
@@ -134,7 +134,7 @@ states:
 #
 # The incident state requires the username and password and simply creates a new
 # incident in the table based on a information provided. The equivalent REST API call for Servicenow.com is:
-#   - https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-POST
+#   - https://developer.servicenow.com/dev.do#!/reference/api/sandiego/rest/c_TableAPI#table-POST
 #
 - id: create-incident
   type: action
@@ -179,7 +179,7 @@ states:
 #
 # The incident state requires the username and password and simply updates an existing
 # incident in the table based on a information provided. The equivalent REST API call for Servicenow.com is:
-#   - https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-PATCH
+#   - https://developer.servicenow.com/dev.do#!/reference/api/sandiego/rest/c_TableAPI#table-PATCH
 #
 - id: update-incident
   type: action
@@ -223,7 +223,7 @@ states:
 #
 # The incident state requires the username and password and simply deletes an existing incident
 # in the table based on a sys_id provided. The equivalent REST API call for Servicenow.com is:
-#   - https://developer.servicenow.com/dev.do#!/reference/api/tokyo/rest/c_TableAPI#table-DELETE
+#   - https://developer.servicenow.com/dev.do#!/reference/api/sandiego/rest/c_TableAPI#table-DELETE
 #
 - id: delete-incident
   type: action
