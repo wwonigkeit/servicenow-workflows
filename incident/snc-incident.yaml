@@ -29,52 +29,52 @@ functions:
 
 states:
 
-# Validate the input to the workflow. Only the absolutes are validated.
-- id: validate
-  type: validate
-  schema:
-    title: "Validate the input to the incident creation workflow"
-    type: object
-    required: ["sncurl", "sncusername","sncpassword","action"]
-    properties:
-      sncurl:
-        title: "Servicenow.com URL in format https://dev80617.service-now.com"
-        type: string
-        default: "https://dev121309.service-now.com/"
-      sncusername:
-        title: "Servicenow.com username for basic authentication"
-        type: string
-        default: "admin"
-      sncpassword:
-        title: "Servicenow.com password for basic authentication"
-        type: string
-        default: "3dOK=4Q*pkhS"
-      action:
-        title: "Action can be list, get, update or create"
-        type: string
-        enum: ["list", "get", "create", "update", "delete"]
-        default: list
-      incident_sys_id:
-        title: "Incident sys_id to get details for"
-        type: string
-        default: "57af7aec73d423002728660c4cf6a71c"
-      description:
-        title: "Long description for the incident creation or update"
-        type: string
-        default: "Long description for the incident creation or update"
-      impact:
-        title: "Impact for the incident creation or update"
-        type: number
-        default: 3
-      severity:
-        title: "Severity ranging from 1 - High to 3 - Low"
-        type: number
-        default: 3
-      short_description:
-        title: "Short description for the incident creation or update"
-        type: string
-        default: "Short description for the incident creation or update"
-  transition: transition-action
+# # Validate the input to the workflow. Only the absolutes are validated.
+# - id: validate
+#   type: validate
+#   schema:
+#     title: "Validate the input to the incident creation workflow"
+#     type: object
+#     required: ["sncurl", "sncusername","sncpassword","action"]
+#     properties:
+#       sncurl:
+#         title: "Servicenow.com URL in format https://dev80617.service-now.com"
+#         type: string
+#         default: "https://dev121309.service-now.com/"
+#       sncusername:
+#         title: "Servicenow.com username for basic authentication"
+#         type: string
+#         default: "admin"
+#       sncpassword:
+#         title: "Servicenow.com password for basic authentication"
+#         type: string
+#         default: "3dOK=4Q*pkhS"
+#       action:
+#         title: "Action can be list, get, update or create"
+#         type: string
+#         enum: ["list", "get", "create", "update", "delete"]
+#         default: list
+#       incident_sys_id:
+#         title: "Incident sys_id to get details for"
+#         type: string
+#         default: "57af7aec73d423002728660c4cf6a71c"
+#       description:
+#         title: "Long description for the incident creation or update"
+#         type: string
+#         default: "Long description for the incident creation or update"
+#       impact:
+#         title: "Impact for the incident creation or update"
+#         type: number
+#         default: 3
+#       severity:
+#         title: "Severity ranging from 1 - High to 3 - Low"
+#         type: number
+#         default: 3
+#       short_description:
+#         title: "Short description for the incident creation or update"
+#         type: string
+#         default: "Short description for the incident creation or update"
+#   transition: transition-action
 
 #
 # The first state is used to transition to the correct action defined by the "action" JSON input.
