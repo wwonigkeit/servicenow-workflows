@@ -28,54 +28,6 @@ functions:
   type: knative-workflow
 
 states:
-
-# Validate the input to the workflow. Only the absolutes are validated.
-- id: validate
-  type: validate
-  schema:
-    title: "Validate the input to the change request creation workflow"
-    type: object
-    required: ["sncurl", "sncusername","sncpassword","action"]
-    properties:
-      sncurl:
-        title: "Servicenow.com URL in format https://dev80617.service-now.com"
-        type: string
-        default: "https://dev121309.service-now.com/"
-      sncusername:
-        title: "Servicenow.com username for basic authentication"
-        type: string
-        default: "admin"
-      sncpassword:
-        title: "Servicenow.com password for basic authentication"
-        type: string
-        default: "3dOK=4Q*pkhS"
-      action:
-        title: "Action can be list, get, update or create"
-        type: string
-        enum: ["list", "get", "create", "update", "delete"]
-        default: list
-      change_sys_id:
-        title: "Change request sys_id to get details for"
-        type: string
-        default: "c83c5e5347c12200e0ef563dbb9a7190"
-      description:
-        title: "Long description for the change request creation or update"
-        type: string
-        default: "Long description for the change request creation or update"
-      impact:
-        title: "Impact for the change request creation or update"
-        type: number
-        default: 3
-      severity:
-        title: "Severity ranging from 1 - High to 3 - Low"
-        type: number
-        default: 3
-      short_description:
-        title: "Short description for the change request creation or update"
-        type: string
-        default: "Short description for the change request creation or update"
-  transition: transition-action
-
 #
 # The first state is used to transition to the correct action defined by the "action" JSON input.
 # This is a simple switch state
