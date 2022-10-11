@@ -78,25 +78,25 @@ states:
 - id: transition-action
   type: switch
   conditions:
-  - condition: jq(.action == "list" && .workflow == "incident")
+  - condition: jq(.action == "list" and .workflow == "incident")
     transition: event-list-incident
-  - condition: jq(.action == "get" && .workflow == "incident")
+  - condition: jq(.action == "get" and .workflow == "incident")
     transition: event-get-incident
-  - condition: jq(.action == "create" && .workflow == "incident")
+  - condition: jq(.action == "create" and .workflow == "incident")
     transition: event-create-incident
-  - condition: jq(.action == "update" && .workflow == "incident")
+  - condition: jq(.action == "update" and .workflow == "incident")
     transition: event-update-incident
-  - condition: jq(.action == "delete" && .workflow == "incident")
+  - condition: jq(.action == "delete" and .workflow == "incident")
     transition: event-delete-incident
-  - condition: jq(.action == "list" && .workflow == "change")
+  - condition: jq(.action == "list" and .workflow == "change")
     transition: event-list-change
-  - condition: jq(.action == "get" && .workflow == "change")
+  - condition: jq(.action == "get" and .workflow == "change")
     transition: event-get-change
-  - condition: jq(.action == "create" && .workflow == "change")
+  - condition: jq(.action == "create" and .workflow == "change")
     transition: event-create-change
-  - condition: jq(.action == "update" && .workflow == "change")
+  - condition: jq(.action == "update" and .workflow == "change")
     transition: event-update-change
-  - condition: jq(.action == "delete" && .workflow == "change")
+  - condition: jq(.action == "delete" and .workflow == "change")
     transition: event-delete-change
   defaultTransition: exception-catch
 
