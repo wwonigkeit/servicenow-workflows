@@ -24,11 +24,11 @@ start:
   type: eventsXor
   state: strip-fields
   events: 
-    - type: com.direktiv.snc.incident.list
-    - type: com.direktiv.snc.incident.get
-    - type: com.direktiv.snc.incident.create
-    - type: com.direktiv.snc.incident.update
-    - type: com.direktiv.snc.incident.delete
+    - type: com.direktiv.snc.change.list
+    - type: com.direktiv.snc.change.get
+    - type: com.direktiv.snc.change.create
+    - type: com.direktiv.snc.change.update
+    - type: com.direktiv.snc.change.delete
 
 #
 # Define the "request" knative-function to be used for all the Service-now.com 
